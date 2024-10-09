@@ -1,0 +1,23 @@
+entitee{
+attributs :
+
+hitbox = (x,y,lageur,hauteur)
+hitbox_enable = Bool
+
+fonction :
+
+move_j(joueur) -> bouge l'entité a la place du joueur
+move() -> bouge l'entitee
+draw(display) -> affiche l'entitee
+collide(entitee) -> renvoie si est en collision avec l'hitbox d'une autre entitée
+}
+
+map(entitee){}
+
+joueur(entitee){
+get_inputs()
+move() -> appelle move_j(this) dans la liste des entitées
+}
+
+obstacle(entitee){}
+
