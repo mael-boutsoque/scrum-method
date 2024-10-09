@@ -1,0 +1,15 @@
+VISION 
+
+Avoir un personnage qui bouge sur une carte avec des limites et des obstacles qui bloquent. 
+
+OBJECTIFS 
+
+Afficher un personnage au centre.
+
+Il doit bouger et rester au centre de l'écran.
+
+Avoir et afficher une carte limitée.
+
+Avoir une classe obstacle fonctionelle.
+
+Un obstacle est est un rectangle dans lequel le joueur ne peut pas rentrer.
