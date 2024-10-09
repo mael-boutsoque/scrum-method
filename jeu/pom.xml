@@ -3,11 +3,11 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.mycompany.app</groupId>
-  <artifactId>my-app</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <groupId>fr.ul.acl</groupId>
+  <artifactId>jeu</artifactId>
+  <version>0</version>
 
-  <name>my-app</name>
+  <name>jeu</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
@@ -89,7 +89,7 @@
           <artifactId>exec-maven-plugin</artifactId>
           <version>1.4.0</version>
           <configuration>
-          <mainClass>com.mycompany.app.App</mainClass>
+          <mainClass>fr.ul.acl.App</mainClass>
           </configuration>
           </plugin>
       </plugins>
