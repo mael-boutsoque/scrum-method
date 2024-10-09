@@ -3,6 +3,7 @@ attributs :
 
 hitbox = (x,y,lageur,hauteur)
 hitbox_enable = Bool
+image
 
 fonction :
 
