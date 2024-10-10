@@ -4,12 +4,12 @@ Avoir un personnage qui bouge sur une carte avec des limites et des obstacles qu
 
 OBJECTIFS 
 
-Afficher un personnage au centre.
+Afficher un personnage au centre de l'écran.-> Alexis
 
-Il doit bouger et rester au centre de l'écran.
+Il doit pouvoir bouger et rester au centre de l'écran. -> Cristophe
 
-Avoir et afficher une carte limitée.
+Avoir et afficher une carte limitée.-> Théodore
 
-Avoir une classe obstacle fonctionnelle.
+Avoir une classe obstacle fonctionnelle.-> Mael
 
-Un obstacle est un rectangle dans lequel le joueur ne peut pas rentrer.
+Un obstacle est un rectangle dans lequel le joueur ne peut pas rentrer. -> Ouroudj
