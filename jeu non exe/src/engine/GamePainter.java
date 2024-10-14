@@ -23,8 +23,5 @@ public interface GamePainter {
 
 	public abstract int getWidth();
 
-	public abstract int getHeight();
-
-	public void set_pos(int x,int y);
-	
+	public abstract int getHeight();	
 }

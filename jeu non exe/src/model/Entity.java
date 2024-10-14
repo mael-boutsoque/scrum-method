@@ -14,11 +14,15 @@ public class Entity {
     protected int y_relative = 0;
     protected int height = 30;
     protected int width = 30;
+    protected boolean is_colidable = true;
 
 
     // image
     protected String image_path;
     protected BufferedImage image;
+
+    // debug
+    public boolean show_hitbox = false;
 
     Entity(int x,int y){
         this.x = x;
@@ -66,7 +70,22 @@ public class Entity {
     }
 
     public int get_speed() {
-        // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'get_speed'");
+    }
+
+    public boolean colide(Entity entity2){
+        if(this.get_x() < entity2.get_x() && this.get_x()+this.width > entity2.get_x()) {
+            if(this.get_y() < entity2.get_y() && this.get_y()+this.height > entity2.get_y()) return true;
+            else if(entity2.get_y()+entity2.height > this.get_y()) return true;
+        }
+        else if(entity2.get_x()+entity2.width > this.get_x()){
+            if(this.get_y() < entity2.get_y() && this.get_y()+this.height > entity2.get_y()) return true;
+            else if(entity2.get_y()+entity2.height > this.get_y()) return true;
+        }
+        return false;
+    }
+
+    public boolean colidable(){
+        return is_colidable;
     }
 }

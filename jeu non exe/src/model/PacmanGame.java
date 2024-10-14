@@ -43,6 +43,7 @@ public class PacmanGame implements Game {
 	public void evolve(Cmd commande , Entities entities) {
 		//System.out.println("("+String.valueOf(entities.get_player().get_x())+","+String.valueOf(entities.get_player().get_y())+")");
 		//System.out.println("Execute "+commande);
+
 		switch (commande) {
 			case IDLE:
 				break;
@@ -59,6 +60,17 @@ public class PacmanGame implements Game {
 				entities.player_move(entities.get_player().get_speed(),0);
 				break;
 		}
+
+		// show entities hitbox if collision to debug
+		for(int j=0;j<entities.size();j++){
+			entities.get_by_id(j).show_hitbox = false;
+		}
+		for(int i=0;i<entities.size();i++){
+			if(entities.get_by_id(i).colidable() && entities.get_player().colide(entities.get_by_id(i))){
+				entities.get_by_id(i).show_hitbox = true ;
+			}
+		}
+		entities.get_player().show_hitbox = false;
 	}
 
 	/**

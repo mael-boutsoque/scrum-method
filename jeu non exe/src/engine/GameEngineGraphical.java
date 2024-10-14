@@ -65,7 +65,7 @@ public class GameEngineGraphical {
 
 			// fait evoluer le game
 			this.game.evolve(c,entities);
-			this.gamePainter.set_pos(entities.get_player().get_x(),entities.get_player().get_y());
+			//this.gamePainter.set_pos(entities.get_player().get_x(),entities.get_player().get_y());
 			// affiche le game
 			this.gui.paint(this.game , entities);
 			// met en attente
