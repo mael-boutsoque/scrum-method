@@ -5,7 +5,7 @@ public class Map extends Entity {
         super(x,y);
         height = 1000;
         width = 1000;
-        image_path = "src\\model\\images\\map.png";
+        image_path = "model\\images\\map.png";
         load_image();
     }
 }

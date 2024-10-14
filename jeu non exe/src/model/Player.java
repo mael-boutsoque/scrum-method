@@ -10,7 +10,7 @@ public class Player extends Entity {
         height = 60;
 
         //chargement image
-        image_path = "src\\model\\images\\player.png";
+        image_path = "model\\images\\player.png";
         this.load_image();
 
         // stats

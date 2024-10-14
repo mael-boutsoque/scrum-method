@@ -23,7 +23,7 @@ public class Entity {
     Entity(int x,int y){
         this.x = x;
         this.y = y;
-        image_path = "src\\model\\images\\entity.png";
+        image_path = "model\\images\\entity.png";
         load_image();
     }
 
