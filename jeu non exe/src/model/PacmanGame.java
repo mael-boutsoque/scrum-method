@@ -71,6 +71,11 @@ public class PacmanGame implements Game {
 			}
 		}
 		entities.get_player().show_hitbox = false;
+		
+		//fait évoluer les entitiés
+		for(int i =0;i<entities.size();i++) {
+			entities.get_by_id(i).evolve(entities);
+		}
 	}
 
 	/**

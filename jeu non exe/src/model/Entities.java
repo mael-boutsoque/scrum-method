@@ -10,6 +10,7 @@ public class Entities {
         liste.add(new Map(0,0));
         liste.add(new Entity(0,0));
         liste.add(new Entity(300, 300));
+        liste.add(new MonstreTest(700,300));
         liste.add(new Player( 1920/4 , 1080/4));
     }
 

@@ -35,10 +35,11 @@ public class Entity {
     }
 
     public void move(int x,int y,Entities entities){
+    	if (this.can_move(x, y, entities)) {
         this.x += x;
         this.y += y;
         this.hitbox.move(this.get_x(),this.get_y());
-        this.can_move(x, y, entities);
+    	}
     }
 
     public void move_relative(int x,int y,Entities entities){
@@ -104,5 +105,9 @@ public class Entity {
     }
     public void load_hitbox() {
     	this.hitbox = new Hitbox(this.get_x(),this.get_y(),this.get_width(),this.get_height());
+    }
+    
+    public void evolve(Entities entities) {
+    	
     }
 }
