@@ -44,22 +44,28 @@ public class PacmanGame implements Game {
 		//System.out.println("("+String.valueOf(entities.get_player().get_x())+","+String.valueOf(entities.get_player().get_y())+")");
 		//System.out.println("Execute "+commande);
 
+
+		//deplacement joueur
+		int x=0,y=0;
 		switch (commande) {
 			case IDLE:
 				break;
 			case UP:
-				entities.player_move(0,-entities.get_player().get_speed(),entities);
+				y += -1;
 				break;
 			case DOWN:
-				entities.player_move(0,entities.get_player().get_speed(),entities);
+				y += 1;
 				break;
 			case LEFT:
-				entities.player_move(-entities.get_player().get_speed(),0,entities);
+				x += -1;
 				break;
 			case RIGHT:
-				entities.player_move(entities.get_player().get_speed(),0,entities);
+				x += 1;
 				break;
 		}
+
+		int speed = entities.get_player().get_speed();
+		if (entities.get_player().can_move(x*speed, y*speed, entities)){entities.player_move(x*speed, y*speed, entities);}
 
 		// show entities hitbox if collision to debug
 		for(int j=0;j<entities.size();j++){

@@ -28,9 +28,6 @@ public class Player extends Entity {
         y -= j;
         x_relative += i;
         y_relative += j;}
-    	else {
-    		entities.player_move(i, j, entities);
-    	}
     }
 
     public int get_speed() {
