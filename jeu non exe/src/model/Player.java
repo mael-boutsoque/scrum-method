@@ -19,11 +19,12 @@ public class Player extends Entity {
     }
 
     public void move_relative(int i,int j,Entities entities){
-    	if(this.can_move(get_x() + i, get_y() + j, entities)) {
-        x -= i;
-        y -= j;
-        x_relative += i;
-        y_relative += j;}
+    	if(this.can_move(i,j, entities)) {
+            x -= i;
+            y -= j;
+            x_relative += i;
+            y_relative += j;
+        }
     }
 
     public int get_speed() {
