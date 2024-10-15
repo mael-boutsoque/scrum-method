@@ -15,6 +15,7 @@ public class Entity {
     protected int height = 100;
     protected int width = 100;
     protected boolean is_colidable = true;
+    Hitbox hitbox;
 
 
     // image
@@ -29,16 +30,19 @@ public class Entity {
         this.y = y;
         image_path = "model\\images\\entity.png";
         load_image();
+        this.load_hitbox();
     }
 
     public void move(int x,int y){
         this.x += x;
         this.y += y;
+        this.hitbox.move(this.get_x(),this.get_y());
     }
 
     public void move_relative(int x,int y){
         this.x_relative += x;
         this.y_relative += y;
+        this.hitbox.move(this.get_x(),this.get_y());
     }
 
     public int get_x(){
@@ -73,15 +77,14 @@ public class Entity {
         throw new UnsupportedOperationException("Unimplemented method 'get_speed'");
     }
 
-    public boolean colide(Entity entity2){
-        if(this.get_x()<=entity2.get_x()+entity2.width 
-        		&& this.get_x()+this.width >= entity2.get_x()
-        		&& this.get_y() <= entity2.get_y()+entity2.height
-        		&& this.height+this.get_y() >= entity2.get_y()) {return true;}
-        return false;
+    public boolean colide(Entity entity2) {
+    	return this.hitbox.colide(entity2.hitbox);
     }
 
     public boolean colidable(){
         return is_colidable;
+    }
+    public void load_hitbox() {
+    	this.hitbox = new Hitbox(this.get_x(),this.get_y(),this.get_width(),this.get_height());
     }
 }

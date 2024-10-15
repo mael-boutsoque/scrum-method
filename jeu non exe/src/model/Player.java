@@ -12,6 +12,7 @@ public class Player extends Entity {
         //chargement image
         image_path = "model\\images\\player.png";
         this.load_image();
+        this.load_hitbox();
 
         // stats
         this.speed = 3;

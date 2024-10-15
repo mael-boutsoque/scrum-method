@@ -47,9 +47,13 @@ public class PacmanPainter implements GamePainter {
 			crayon.drawImage(entitee.get_image(), entitee.get_x(), entitee.get_y(), entitee.get_width(), entitee.get_height(), null, null);
 
 			// show hitbox to debbug
-			if(entitee.show_hitbox){
-				crayon.drawRect(entitee.get_x(), entitee.get_y(), entitee.get_width(), entitee.get_height());
+			if(entitee.show_hitbox) {
+				crayon.setColor(Color.BLUE);
 			}
+			else {
+				crayon.setColor(Color.RED);
+			}
+			crayon.drawRect(entitee.hitbox.get_x(), entitee.hitbox.get_y(), entitee.hitbox.get_width(), entitee.hitbox.get_height());
 		}
 
 		crayon.dispose();
