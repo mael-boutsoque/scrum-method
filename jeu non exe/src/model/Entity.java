@@ -12,8 +12,8 @@ public class Entity {
     protected int y;
     protected int x_relative = 0;
     protected int y_relative = 0;
-    protected int height = 30;
-    protected int width = 30;
+    protected int height = 100;
+    protected int width = 100;
     protected boolean is_colidable = true;
 
 
@@ -74,14 +74,10 @@ public class Entity {
     }
 
     public boolean colide(Entity entity2){
-        if(this.get_x() < entity2.get_x() && this.get_x()+this.width > entity2.get_x()) {
-            if(this.get_y() < entity2.get_y() && this.get_y()+this.height > entity2.get_y()) return true;
-            else if(entity2.get_y()+entity2.height > this.get_y()) return true;
-        }
-        else if(entity2.get_x()+entity2.width > this.get_x()){
-            if(this.get_y() < entity2.get_y() && this.get_y()+this.height > entity2.get_y()) return true;
-            else if(entity2.get_y()+entity2.height > this.get_y()) return true;
-        }
+        if(this.get_x()<=entity2.get_x()+entity2.width 
+        		&& this.get_x()+this.width >= entity2.get_x()
+        		&& this.get_y() <= entity2.get_y()+entity2.height
+        		&& this.height+this.get_y() >= entity2.get_y()) {return true;}
         return false;
     }
 
