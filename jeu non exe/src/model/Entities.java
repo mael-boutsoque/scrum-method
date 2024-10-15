@@ -25,9 +25,9 @@ public class Entities {
         return liste.get(this.size()-1);
     }
 
-    public void player_move(int x,int y){
+    public void player_move(int x,int y,Entities entities){
         for(int i=0;i<this.size();i++){
-            this.get_by_id(i).move_relative(-x, -y);
+            this.get_by_id(i).move_relative(-x, -y,entities);
         }
     }
 }

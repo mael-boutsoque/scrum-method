@@ -16,6 +16,7 @@ public class Entity {
     protected int width = 100;
     protected boolean is_colidable = true;
     Hitbox hitbox;
+    Hitbox hitboxTemp;
 
 
     // image
@@ -33,19 +34,36 @@ public class Entity {
         this.load_hitbox();
     }
 
-    public void move(int x,int y){
+    public void move(int x,int y,Entities entities){
         this.x += x;
         this.y += y;
         this.hitbox.move(this.get_x(),this.get_y());
+        this.can_move(x, y, entities);
     }
 
-    public void move_relative(int x,int y){
+    public void move_relative(int x,int y,Entities entities){
         this.x_relative += x;
         this.y_relative += y;
         this.hitbox.move(this.get_x(),this.get_y());
     }
+    
+    public boolean can_move(int x, int y,Entities entities) {
+    	//System.out.println(this.getClass().getName());
+    	hitboxTemp = new Hitbox(this.get_x(), this.get_y() , this.get_width(), this.get_height());
+		for(int i=0;i<entities.size();i++) {
+			if(entities.get_by_id(i).get_hitbox().colide(hitboxTemp) && entities.get_by_id(i).is_colidable && entities.get_by_id(i) != this) {
+				System.out.println(this.getClass().getName() + " " + entities.get_by_id(i).getClass().getName() + " colide");
+				return false;
+			}
+		}
+    	return true;
+    }
 
-    public int get_x(){
+    private Hitbox get_hitbox() {
+		return this.hitbox;
+	}
+
+	public int get_x(){
         return x + x_relative;
     }
     public int get_y(){

@@ -48,16 +48,16 @@ public class PacmanGame implements Game {
 			case IDLE:
 				break;
 			case UP:
-				entities.player_move(0,-entities.get_player().get_speed());
+				entities.player_move(0,-entities.get_player().get_speed(),entities);
 				break;
 			case DOWN:
-				entities.player_move(0,entities.get_player().get_speed());
+				entities.player_move(0,entities.get_player().get_speed(),entities);
 				break;
 			case LEFT:
-				entities.player_move(-entities.get_player().get_speed(),0);
+				entities.player_move(-entities.get_player().get_speed(),0,entities);
 				break;
 			case RIGHT:
-				entities.player_move(entities.get_player().get_speed(),0);
+				entities.player_move(entities.get_player().get_speed(),0,entities);
 				break;
 		}
 
