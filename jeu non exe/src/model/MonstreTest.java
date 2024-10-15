@@ -1,11 +1,10 @@
 package model;
 
 public class MonstreTest extends Entity{
-	MonstreTest(int x,int y){
-		super(x,y);
+	MonstreTest(int x,int y,int width,int height){
+		super(x,y,width,height);
 		   image_path = "model\\images\\OuroudjSama.png";
 	        this.load_image();
-	        this.load_hitbox();
 	}
 	
 	public void evolve(Entities entities) {

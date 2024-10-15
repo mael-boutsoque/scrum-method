@@ -26,9 +26,11 @@ public class Entity {
     // debug
     public boolean show_hitbox = false;
 
-    Entity(int x,int y){
+    Entity(int x,int y,int width,int height){
         this.x = x;
         this.y = y;
+        this.height = height;
+        this.width = width;
         image_path = "model\\images\\entity.png";
         load_image();
         this.load_hitbox();

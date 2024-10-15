@@ -1,18 +1,14 @@
 package model;
 
 public class Player extends Entity {
-
     private int speed;
 
     Player(int x , int y){
-        super(x - 30, y - 30);
-        width = 60;
-        height = 60;
+        super(x - 30, y - 30 , 60 , 60);
 
         //chargement image
         image_path = "model\\images\\player.png";
         this.load_image();
-        this.load_hitbox();
 
         // stats
         this.speed = 3;
