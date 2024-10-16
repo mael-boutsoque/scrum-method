@@ -9,7 +9,19 @@ public class MonstreTest extends Entity{
 	
 	public void evolve(Entities entities) {
 		
-		this.move(-1,0,entities);
+		int dx = 0 , dy = 0;
+		if(entities.get_player().get_x()>this.get_x()){
+			dx = 1;
+		}
+		else dx = -1;
+
+		if(entities.get_player().get_y()>this.get_y()){
+			dy = 1;
+		}
+		else dy = -1;
+
+		this.move(dx,0,entities);
+		this.move(0,dy,entities);
 		
 	}
 		
