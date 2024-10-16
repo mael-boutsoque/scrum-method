@@ -55,7 +55,8 @@ public class Entity {
 		for(int i=0;i<entities.size();i++) {
 			if(entities.get_by_id(i).get_hitbox().colide(hitboxTemp) && entities.get_by_id(i).is_colidable && entities.get_by_id(i) != this) {
 				//System.out.println(this.getClass().getName() + " " + entities.get_by_id(i).getClass().getName() + " colide");
-				return false;
+				this.on_collision(entities);
+                return false;
 			}
 		}
     	return true;
@@ -110,5 +111,9 @@ public class Entity {
     
     public void evolve(Entities entities) {
     	
+    }
+
+    public void on_collision(Entities entities){
+
     }
 }
