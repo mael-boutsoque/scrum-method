@@ -1,6 +1,7 @@
 package model;
 
 import java.awt.event.KeyEvent;
+import java.util.ArrayList;
 
 import engine.Cmd;
 import engine.GameController;
@@ -17,13 +18,13 @@ public class PacmanController implements GameController {
 	/**
 	 * commande en cours
 	 */
-	private Cmd commandeEnCours;
+	private ArrayList<Cmd> commandeEnCours;
 	
 	/**
 	 * construction du controleur par defaut le controleur n'a pas de commande
 	 */
 	public PacmanController() {
-		this.commandeEnCours = Cmd.IDLE;
+		this.commandeEnCours = new ArrayList<Cmd>();
 	}
 
 	/**
@@ -32,7 +33,7 @@ public class PacmanController implements GameController {
 	 * 
 	 * @return commande faite par le joueur
 	 */
-	public Cmd getCommand() {
+	public ArrayList<Cmd> getCommand() {
 		return this.commandeEnCours;
 	}
 
@@ -41,23 +42,12 @@ public class PacmanController implements GameController {
 	 * met a jour les commandes en fonctions des touches appuyees
 	 */
 	public void keyPressed(KeyEvent e) {
-
 		//gestion touches
-		switch (e.getKeyChar()) {
-		case 'z':
-			this.commandeEnCours = Cmd.UP;
-			break;
-		case 's':
-			this.commandeEnCours = Cmd.DOWN;
-			break;
-		case 'q':
-			this.commandeEnCours = Cmd.LEFT;
-			break;
-		case 'd':
-			this.commandeEnCours = Cmd.RIGHT;
-			break;
-		}
-
+			char keychar = e.getKeyChar();
+			if( keychar == 'z' && !commandeEnCours.contains(Cmd.UP)) this.commandeEnCours.add(Cmd.UP);
+			if( keychar == 's' && !commandeEnCours.contains(Cmd.DOWN)) this.commandeEnCours.add(Cmd.DOWN);
+			if( keychar == 'q' && !commandeEnCours.contains(Cmd.LEFT)) this.commandeEnCours.add(Cmd.LEFT);
+			if( keychar == 'd' && !commandeEnCours.contains(Cmd.RIGHT)) this.commandeEnCours.add(Cmd.RIGHT);
 	}
 
 	@Override
@@ -65,7 +55,11 @@ public class PacmanController implements GameController {
 	 * met a jour les commandes quand le joueur relache une touche
 	 */
 	public void keyReleased(KeyEvent e) {
-		this.commandeEnCours = Cmd.IDLE;
+		char keychar = e.getKeyChar();
+			if( keychar == 'z' ) this.commandeEnCours.remove(Cmd.UP);
+			if( keychar == 's' ) this.commandeEnCours.remove(Cmd.DOWN);
+			if( keychar == 'q' ) this.commandeEnCours.remove(Cmd.LEFT);
+			if( keychar == 'd' ) this.commandeEnCours.remove(Cmd.RIGHT);
 	}
 
 	@Override

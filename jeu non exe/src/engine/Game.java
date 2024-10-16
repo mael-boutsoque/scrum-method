@@ -1,5 +1,7 @@
 package engine;
 
+import java.util.ArrayList;
+
 import model.Entities;
 
 /**
@@ -16,7 +18,7 @@ public interface Game {
 	 * @param userCmd
 	 *            commande utilisateur
 	 */
-	public void evolve(Cmd userCmd , Entities entities);
+	public void evolve(ArrayList<Cmd> userCmd , Entities entities);
 
 	/**
 	 * @return true si et seulement si le jeu est fini

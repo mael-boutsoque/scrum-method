@@ -1,5 +1,7 @@
 package engine;
 
+import java.util.ArrayList;
+
 import model.Entities;
 
 /**
@@ -61,7 +63,7 @@ public class GameEngineGraphical {
 		// boucle de game
 		while (!this.game.isFinished()) {
 			// demande controle utilisateur
-			Cmd c = this.gameController.getCommand();
+			ArrayList<Cmd> c = this.gameController.getCommand();
 
 			// fait evoluer le game
 			this.game.evolve(c,entities);
